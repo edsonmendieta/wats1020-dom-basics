@@ -4,43 +4,20 @@
 //
 //////////////////////////////////////////
 
-function generateFortuneCookie() {
-		
-    // This is where your code for the Fortune Cookie generator goes.
-    // You will use the fortunesList variable defined lower in this file
-    // to supply your fortune cookies with text.
-	 var fortune = fortunesList[Math.floor(Math.random()*10)];
+function generateFortuneCookie() { //function that executes every time user clicks button
 
-    // TODO: Grab the paragraph with the ID
-    // `fortune-cookie-text` to be able to insert text into that element.
+	 var fortune = fortunesList[Math.floor(Math.random()*10)]; //generates random fortune from fortunesList.
+
 	
-	document.getElementById('fortune-cookie-text').innerHTML = fortune;
-	var newListItem = document.createElement('li'); 
-	var textInLi = document.createTextNode(fortune);
-	newListItem.appendChild(textInLi);
-	
-	document.getElementById('previous-fortunes-container').appendChild(newListItem);
+	document.getElementById('fortune-cookie-text').innerHTML = fortune; // sets the text of box to "fortune" text
+	var newListItem = document.createElement('li'); //create new list item
+	var textInLi = document.createTextNode(fortune); //create text node whose text is the fortune from the var "fortune"
+	newListItem.appendChild(textInLi); // fills newly created list item with "fortune" text
+	document.getElementById('previous-fortunes-container').appendChild(newListItem); // puts the new list item into this container.
 	
 }
 
-    // TODO: Update the Previous Fortunes list with the current `innerHTML`
-    // value of `#fortune-cookie-text`. Follow these steps:
-        // 1. Create a new `li` element with the `document.createElement()` method.
-        // 2. Set the `innerHTML` of that element equal to the `innerHTML` of
-        //    the `#fortune-cookie-text` element.
-        // 3. Select the `#previous-fortunes-container` container and use
-        //    `appendChild()` to append the new `li` element you created above.
-        // 4. You should see the previous fortune cookie saying show up in the list.
-	
 
-
-    // TODO: Select a new (random) fortune cookie saying from the data stored in the
-    // `fortunesList` variable. (HINT: You will use `Math.floor()` and
-    // `Math.random()` to accomplish this.) Use this data to update the
-    // `innerText` of the `#fortune-cookie-text` element.
-
-
-// The following data list is provided for you to use in your code.
 var fortunesList = [
     "People are naturally attracted to you.",
     "You learn from your mistakes... You will learn a lot today.",
