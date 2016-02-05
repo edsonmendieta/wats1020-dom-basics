@@ -1,21 +1,37 @@
-//////////////////////////////////////////////////////////////////
-//
-// Fortune Cookie Generator
-//
-//////////////////////////////////////////
-
 function generateFortuneCookie() { //function that executes every time user clicks button
 
-	 var fortune = fortunesList[Math.floor(Math.random()*10)]; //generates random fortune from fortunesList.
 
 	
-	document.getElementById('fortune-cookie-text').innerHTML = fortune; // sets the text of box to "fortune" text
+	var getFortune = fortunesList[Math.floor(Math.random()*fortunesList.length)];
+
+  function makeFortune () {	 
+	if (usedFortunes.length == fortunesList.length) {
+  		 usedFortunes = [];
+  	 }
+  	 if (usedFortunes.length === 0) {
+    	 usedFortunes.push(getFortune);
+  	 }   
+  	 else {
+    	 for (i = 0; i < usedFortunes.length; ++i) {
+      	 if (usedFortunes[i] == getFortune) {
+        	 getFortune = fortunesList[Math.floor(Math.random()*fortunesList.length)];
+        	 i = -1;
+      	 }  
+    	 }
+    	 usedFortunes.push(getFortune);
+  	 }
+	 }
+
+	
+	document.getElementById('fortune-cookie-text').innerHTML = makeFortune(getFortune); // sets the text of box to "fortune" text
 	var newListItem = document.createElement('li'); //create new list item
-	var textInLi = document.createTextNode(fortune); //create text node whose text is the fortune from the var "fortune"
+	var textInLi = document.createTextNode(getFortune); //create text node whose text is the fortune from the var "fortune"
 	newListItem.appendChild(textInLi); // fills newly created list item with "fortune" text
 	document.getElementById('previous-fortunes-container').appendChild(newListItem); // puts the new list item into this container.
 	
 }
+	
+	
 
 
 var fortunesList = [
@@ -71,3 +87,6 @@ var fortunesList = [
     "Joys are often the shadows, cast by sorrows.",
     "Fortune favors the brave."
 ];
+
+var usedFortunes = [];
+
