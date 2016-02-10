@@ -10,10 +10,7 @@ function generateFortuneCookie() { //function that executes every time user clic
   	 }
   	 if (usedFortunes.length === 0) {
     	 usedFortunes.push(getFortune);
-<<<<<<< HEAD
-=======
 			 return getFortune;
->>>>>>> master
   	 }   
   	 else {
     	 for (i = 0; i < usedFortunes.length; ++i) {
@@ -23,10 +20,7 @@ function generateFortuneCookie() { //function that executes every time user clic
       	 }  
     	 }
     	 usedFortunes.push(getFortune);
-<<<<<<< HEAD
-=======
 			 return getFortune;
->>>>>>> master
   	 }
 	 }
 
