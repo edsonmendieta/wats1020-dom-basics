@@ -90,9 +90,6 @@ var fortunesList = [
     "Fortune favors the brave."
 ];
 
-<<<<<<< HEAD
-var usedFortunes = [];
-=======
 var usedFortunes = [];
 
->>>>>>> master
+
