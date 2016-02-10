@@ -10,6 +10,10 @@ function generateFortuneCookie() { //function that executes every time user clic
   	 }
   	 if (usedFortunes.length === 0) {
     	 usedFortunes.push(getFortune);
+<<<<<<< HEAD
+=======
+			 return getFortune;
+>>>>>>> master
   	 }   
   	 else {
     	 for (i = 0; i < usedFortunes.length; ++i) {
@@ -19,6 +23,10 @@ function generateFortuneCookie() { //function that executes every time user clic
       	 }  
     	 }
     	 usedFortunes.push(getFortune);
+<<<<<<< HEAD
+=======
+			 return getFortune;
+>>>>>>> master
   	 }
 	 }
 
@@ -88,4 +96,9 @@ var fortunesList = [
     "Fortune favors the brave."
 ];
 
+<<<<<<< HEAD
 var usedFortunes = [];
+=======
+var usedFortunes = [];
+
+>>>>>>> master
